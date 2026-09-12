@@ -12,7 +12,8 @@ irm https://raw.githubusercontent.com/barbiewire/classic-themes/main/install.ps1
 ```
 
 it downloads everything, dumps it in %LOCALAPPDATA%\ClassicThemes, copies that path to your
-clipboard and opens the folder. then just do steps 2 and 3 below and drag the folder in
+clipboard and opens the folder
+then just do steps 2 and 3 below and drag the folder in
 
 run it whenever there's an update
 THEN press the reload button in your broswer://extensions
