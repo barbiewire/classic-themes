@@ -890,6 +890,10 @@ html.rc-2014 .container-main {
 }
 html.rc-2016 #container-main,
 html.rc-2016 .container-main { max-width: 1338px !important; }
+/* the grids size their columns off this, and the site sets it inline from the full window,
+   so with our narrower rail the rows stopped short and left a gap down the right */
+html.rc-2016 { --home-feed-width: min(1290px, calc(100vw - 235px)) !important; }
+html.rc-2014 { --home-feed-width: 880px !important; }
 html.rc-2016 .rbx-left-col { background: #fff !important; box-shadow: 0 0 3px rgba(25, 25, 25, .3); }
 
 /* section headings go back to plain text with a coloured button on the right */

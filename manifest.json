@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Classic ROBLOX",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Old roblox.com skins - pick 2008-2010, 2011-2012, 2014 or 2015-2016.",
   "icons": {
     "16": "img/icon16.png",
