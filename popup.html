@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Classic ROBLOX</title>
+<style>
+  /* html gets a colour too, otherwise a white strip shows under the box */
+  html, body {
+    margin: 0;
+    background: #f2f2f2;
+    color-scheme: light;
+  }
+  body {
+    width: 250px;   /* chrome will not go narrower than this anyway */
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #000;
+  }
+  .hd {
+    height: 33px;
+    line-height: 33px;
+    padding: 0 18px 0 8px;
+    /* the tab sprite is cut on an angle at its right end, and the see-through corner read as a
+       white notch in the popup. Gradient underneath is sampled straight off the sprite so the
+       corner fills in with the same grey the bar already has. */
+    background:
+      url(img/tab_black_33h_t1.png) no-repeat left top,
+      url(img/tab_black_33h_t2.png) no-repeat right top,
+      linear-gradient(#a6a6a6 0, #4a4a4a 4px, #454545 8px, #403f3f 12px, #3a3a3a 16px,
+                      #343434 20px, #2f2f2f 24px, #2a2a2a 28px, #0d0d0d 33px);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .bx {
+    margin: 6px;
+    padding: 6px 8px;
+    background: #fff url(img/standardBox_01_bkg.png) top repeat-x;
+    border: 1px solid #aaa;
+  }
+  label {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 4px 2px;
+    cursor: pointer;
+  }
+  label:hover { background: #e5f1fd; }
+  b { font-weight: bold; }
+  .sub { color: #666; font-size: 11px; }
+  p { margin: 6px 2px 2px; color: #666; font-size: 11px; }
+</style>
+</head>
+<body>
+  <div class="hd">Classic ROBLOX</div>
+  <div class="bx">
+    <label><input type="radio" name="skin" value="2010"><span><b>2008-2010</b> <span class="sub">city banner, flat blue</span></span></label>
+    <label><input type="radio" name="skin" value="2011"><span><b>2011-2012</b> <span class="sub">big banner, blue bar</span></span></label>
+    <label><input type="radio" name="skin" value="2014"><span><b>2014</b> <span class="sub">grey bar, white page</span></span></label>
+    <label><input type="radio" name="skin" value="2016"><span><b>2015-2016</b> <span class="sub">blue bar, grey page</span></span></label>
+    <label><input type="radio" name="skin" value="off"><span><b>Off</b> <span class="sub">modern site</span></span></label>
+    <p>Applies to open roblox.com tabs right away.</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

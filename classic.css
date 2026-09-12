@@ -1,0 +1,1008 @@
+/* ---------- era knobs ---------- */
+/* the !importants are load bearing. do not touch. i mean it */
+
+html.rc-2011 {
+  --rc-surface-0: #fff;
+  --rc-surface-100: #f2f2f2;
+  --rc-surface-200: #e5f1fd;
+  --rc-surface-300: #fff;
+  --rc-ink: #000;
+  --rc-ink-2: #333;
+  --rc-line: #aaa;
+  --rc-accent: #6e99c9;
+  --rc-radius: 0;
+
+  --rc-font: Arial, Helvetica, sans-serif;
+  --rc-page: #000444 url("chrome-extension://__MSG_@@extension_id__/img/bkg.jpg") top center repeat-x;
+  --rc-col: #f2f2f2;
+  --rc-col-side: 0 none transparent;
+  --rc-art: url("chrome-extension://__MSG_@@extension_id__/img/head_03.jpg") no-repeat 0 0;
+  --rc-art-h: 195px;
+  --rc-nav: url("chrome-extension://__MSG_@@extension_id__/img/topNav_blue.png") 0 0;
+  --rc-nav-over: url("chrome-extension://__MSG_@@extension_id__/img/topNav_blue.png") 0 -30px;
+  --rc-nav-size: 16px;
+  --rc-nav-weight: bold;
+  --rc-head:
+    url("chrome-extension://__MSG_@@extension_id__/img/tab_black_33h_t1.png") no-repeat left top,
+    url("chrome-extension://__MSG_@@extension_id__/img/tab_black_33h_t2.png") no-repeat right top;
+  --rc-head-h: 33px;
+  --rc-head-size: 20px;
+  --rc-head-ink: #fff;
+  --rc-btn2: linear-gradient(#fff, #ddd);
+  --rc-btn2-line: #999;
+  --rc-btn2-ink: #333;
+  --rc-box: #fff url("chrome-extension://__MSG_@@extension_id__/img/standardBox_01_bkg.png") top repeat-x;
+  --rc-box-line: 1px solid #aaa;
+  --rc-link: #00f;
+  --rc-btn: url("chrome-extension://__MSG_@@extension_id__/img/btn_blue18h.png") 0 0 / 100% 200% repeat-x;
+  --rc-btn-line: #1e4f8c;
+  --rc-btn-ink: #fff;
+  --rc-auth-l: url("chrome-extension://__MSG_@@extension_id__/img/head_bkg_t1.png") no-repeat left top;
+  --rc-auth-r: url("chrome-extension://__MSG_@@extension_id__/img/head_bkg_t2.png") no-repeat right top;
+  --rc-auth-ink: #000;
+  --rc-sign: url("chrome-extension://__MSG_@@extension_id__/img/head_sign.png") no-repeat 0 0;
+  --rc-sign-line: 0 none transparent;
+  --rc-sign-h: 81px;
+  --rc-sign-w: 147px;
+  --rc-footer: #e6e6e6;
+}
+
+/* 2008-2010: no sprites anywhere, just flat #6e99c9 and verdana */
+html.rc-2010 {
+  --rc-surface-0: #fff;
+  --rc-surface-100: #e5f1fd;
+  --rc-surface-200: #d7e7f7;
+  --rc-surface-300: #fff;
+  --rc-ink: #000;
+  --rc-ink-2: #333;
+  --rc-line: #6e99c9;
+  --rc-accent: #6e99c9;
+  --rc-radius: 0;
+
+  --rc-font: Verdana, Geneva, sans-serif;
+  --rc-page: #f8fcff url("chrome-extension://__MSG_@@extension_id__/img/bg_gradient.jpg") top left repeat-x;
+  --rc-col: #e5f1fd;
+  --rc-col-side: 5px solid #ddd;
+  --rc-art: url("chrome-extension://__MSG_@@extension_id__/img/woodbanner.png") no-repeat 0 0;
+  --rc-art-h: 72px;
+  --rc-nav: #6e99c9;
+  --rc-nav-over: #5a86b8;
+  --rc-nav-size: 15px;
+  --rc-nav-weight: normal;
+  --rc-head: #6e99c9;
+  --rc-head-h: 28px;
+  --rc-head-size: 16px;
+  --rc-head-ink: #fff;
+  --rc-btn2: linear-gradient(#fff, #ddd);
+  --rc-btn2-line: #999;
+  --rc-btn2-ink: #333;
+  --rc-box: #fff;
+  --rc-box-line: 2px solid #6e99c9;
+  --rc-link: #00f;
+  --rc-btn: #fff;
+  --rc-btn-line: #777;
+  --rc-btn-ink: #333;
+  --rc-auth-l: #6e99c9;
+  --rc-auth-r: #6e99c9;
+  --rc-auth-ink: #fff;
+  --rc-sign: #fff;
+  --rc-sign-line: 1px solid #6e99c9;
+  --rc-sign-h: 62px;
+  --rc-sign-w: 203px;
+  --rc-footer: transparent;
+}
+
+html.rc-2014 {
+  --rc-surface-0: #fff;
+  --rc-surface-100: #f7f7f7;
+  --rc-surface-200: #ebebeb;
+  --rc-surface-300: #fff;
+  --rc-ink: #343434;
+  --rc-ink-2: #343434;
+  --rc-line: #ddd;
+  --rc-accent: #007001;
+  --rc-radius: 2px;
+
+  --rc-font: "Source Sans Pro", "Segoe UI", Arial, Helvetica, sans-serif;
+  --rc-page: #fff;
+  --rc-col: #fff;
+  --rc-col-side: 0 none transparent;
+  --rc-bar-h: 50px;
+  --rc-bar: #343434;
+  --rc-bar-ink: #fff;
+  --rc-logo-w: 105px;
+  --rc-head: transparent;
+  --rc-head-h: 40px;
+  --rc-head-size: 26px;
+  --rc-head-ink: #343434;
+  --rc-box: #fff;
+  --rc-box-line: 1px solid #ddd;
+  --rc-link: #0055b3;
+  --rc-btn: #007001;
+  --rc-btn-line: #007001;
+  --rc-btn-ink: #fff;
+  --rc-btn2: #0055b3;
+  --rc-btn2-line: #0055b3;
+  --rc-btn2-ink: #fff;
+  --rc-footer: #f2f2f2;
+}
+
+html.rc-2016 {
+  --rc-surface-0: #fff;
+  --rc-surface-100: #f2f2f2;
+  --rc-surface-200: #e3e3e3;
+  --rc-surface-300: #fff;
+  --rc-ink: #191919;
+  --rc-ink-2: #191919;
+  --rc-line: #b8b8b8;
+  --rc-accent: #02b757;
+  --rc-radius: 3px;
+
+  --rc-font: "Source Sans Pro", "Segoe UI", Arial, Helvetica, sans-serif;
+  --rc-page: #e3e3e3;
+  --rc-col: #e3e3e3;
+  --rc-col-side: 0 none transparent;
+  --rc-bar-h: 80px;
+  --rc-bar: #0074bd;
+  --rc-bar-ink: #fff;
+  --rc-logo-w: 130px;
+  --rc-head: transparent;
+  --rc-head-h: 40px;
+  --rc-head-size: 26px;
+  --rc-head-ink: #191919;
+  --rc-box: #fff;
+  --rc-box-line: 0 none transparent;
+  --rc-link: #191919;
+  --rc-btn: #02b757;
+  --rc-btn-line: #02b757;
+  --rc-btn-ink: #fff;
+  --rc-btn2: #00a2ff;
+  --rc-btn2-line: #00a2ff;
+  --rc-btn2-ink: #fff;
+  --rc-footer: #e3e3e3;
+}
+
+/* ---------- page shell ---------- */
+
+html.rc-on body,
+html.rc-on body.rbx-body {
+  background: var(--rc-page) !important;
+  color: #000;
+  font-family: var(--rc-font) !important;
+  padding-top: 0 !important;
+}
+
+/* Builder Sans everywhere -> the era font. Icons are skipped, some of them are glyph fonts now */
+html.rc-on body *:not([class*="icon"]):not(svg):not(path) {
+  font-family: var(--rc-font) !important;
+}
+
+html.rc-frame {
+  --home-feed-width: 866px !important;
+}
+/* the new left nav reserves 289px on main + footer through this var */
+html.rc-frame #wrap,
+html.rc-frame body {
+  --left-nav-reserved-width: 0px !important;
+}
+
+html.rc-frame #wrap {
+  position: relative;
+  width: 900px !important; /* 900px like its 2011 baby */
+  min-width: 900px;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* no left sidebar back then, those links live in the My ROBLOX dropdown instead */
+html.rc-frame #left-navigation-container,
+html.rc-frame #navigation.rbx-left-col,
+html.rc-frame .rbx-left-col {
+  display: none !important; /* bye bye sidebar */
+}
+
+html.rc-frame #container-main,
+html.rc-frame .container-main {
+  width: 900px !important;
+  max-width: 900px !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  box-sizing: border-box;
+  background: var(--rc-col) !important;
+  border-left: var(--rc-col-side) !important;
+  border-right: var(--rc-col-side) !important;
+  min-height: 500px;
+}
+html.rc-frame #container-main > .content,
+html.rc-frame #content.content {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 5px 5px 20px !important;
+  background: transparent !important;
+}
+
+/* ---------- banner (injected by classic.js) ---------- */
+
+#rc-top { display: none; }
+html.rc-frame #rc-top {
+  display: block;
+  position: relative;
+  width: 900px;
+  height: calc(var(--rc-art-h) + 30px);
+  background: var(--rc-art);
+  z-index: 6;
+  font: 12px var(--rc-font);
+}
+html.rc-frame #rc-logo {
+  position: absolute;
+  left: 278px;
+  top: 92px;
+  width: 336px;
+  height: 84px;
+}
+
+/* the 2008-2010 banner is a short strip, the logo sits right of centre on it */
+html.rc-2010 #rc-logo { left: 330px; top: 4px; width: 250px; height: 64px; }
+html.rc-2010 #rc-alerts .rc-rows { height: 40px; }
+
+/* the little tab top-left: "Logged in as ..." */
+html.rc-frame #rc-auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28px;
+  padding-left: 2px;
+  background: var(--rc-auth-l);
+  color: var(--rc-auth-ink);
+}
+html.rc-frame #rc-auth > span {
+  display: block;
+  height: 28px;
+  box-sizing: border-box;
+  padding: 6px 10px 0;
+  background: var(--rc-auth-r);
+  white-space: nowrap;
+}
+html.rc-frame #rc-auth b { color: var(--rc-auth-ink); }
+html.rc-frame #rc-auth .rc-me { color: var(--rc-auth-ink) !important; text-decoration: none !important; }
+html.rc-frame #rc-auth .rc-me:hover b { text-decoration: underline; }
+html.rc-on .rc-btn,
+html.rc-on .rc-btn:visited {
+  display: inline-block;
+  height: 18px;
+  line-height: 14px;
+  box-sizing: border-box;
+  margin: 0 0 0 6px;
+  padding: 2px 5px;
+  background: url("chrome-extension://__MSG_@@extension_id__/img/btn_blue18h.png") repeat-x 0 0;
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+html.rc-on .rc-btn:hover { background-position: 0 -18px; }
+html.rc-2010 .rc-btn { background: #33507a !important; border: 1px solid #fff; }
+
+/* the alerts sign, bottom right, sits right on top of the nav bar like the original */
+html.rc-frame #rc-alerts {
+  position: absolute;
+  right: 3px;
+  bottom: 30px;
+  width: var(--rc-sign-w);
+  height: var(--rc-sign-h);
+  box-sizing: border-box;
+  background: var(--rc-sign);
+  border: var(--rc-sign-line);
+}
+html.rc-frame #rc-alerts .rc-rows {
+  padding: 6px 8px 0;
+  height: 44px;
+  overflow: hidden;
+}
+html.rc-frame #rc-alerts a {
+  float: left;
+  width: 50%;
+  height: 21px;
+  line-height: 20px;
+  color: #333 !important;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+html.rc-frame #rc-alerts a.rc-wide { width: 100%; }
+html.rc-frame #rc-alerts a:hover { text-decoration: underline !important; }
+html.rc-frame #rc-alerts i {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  background: url("chrome-extension://__MSG_@@extension_id__/img/head_infobox_icons.png") no-repeat;
+}
+/* sprite is 20x160: msg, robux, friends, tix - each has a grey (none) and a lit (some) state */
+html.rc-frame #rc-alerts .rc-msg i { background-position: 0 0; }
+html.rc-frame #rc-alerts .rc-msg.rc-lit i { background-position: 0 -20px; }
+html.rc-frame #rc-alerts .rc-bux i { background-position: 0 -60px; }
+html.rc-frame #rc-alerts .rc-fr i { background-position: 0 -80px; }
+html.rc-frame #rc-alerts .rc-fr.rc-lit i { background-position: 0 -100px; }
+html.rc-frame #rc-alerts .rc-bux { color: #0a7f0a !important; }
+
+/* ---------- nav bar ---------- */
+
+html.rc-frame #rc-nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 900px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 20px;
+  background: var(--rc-nav);
+}
+html.rc-frame #rc-nav > li {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  margin: 0;
+  padding: 6px 10px 0;
+  font-size: var(--rc-nav-size);
+  font-weight: var(--rc-nav-weight);
+}
+html.rc-frame #rc-nav > li:hover { background: var(--rc-nav-over); }
+html.rc-frame #rc-nav a,
+html.rc-frame #rc-nav a:visited {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+html.rc-2010 #rc-nav a:hover { text-decoration: underline !important; }
+html.rc-frame #rc-nav .rc-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+  border: 4px solid transparent;
+  border-top: 5px solid #fff;
+  border-bottom: 0;
+}
+html.rc-frame #rc-nav ul {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  min-width: 170px;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  text-align: left;
+  background: #444;
+  line-height: 2em;
+  z-index: 1024;
+}
+html.rc-2010 #rc-nav ul { background: #6e99c9; }
+html.rc-frame #rc-nav li:hover > ul { display: block; }
+html.rc-frame #rc-nav ul li { font-size: 14px; font-weight: normal; }
+html.rc-frame #rc-nav ul li a { display: block; padding: 0 12px; }
+html.rc-frame #rc-nav ul li:hover { background: #888; }
+html.rc-2010 #rc-nav ul li:hover { background: #5a86b8; }
+
+/* ---------- the modern header, shrunk into a tab in the top-right corner ---------- */
+
+html.rc-frame #navigation-container { position: static !important; }
+
+html.rc-frame #header.rbx-header,
+html.rc-frame #header.navbar-fixed-top {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 30px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  z-index: 1030 !important;
+}
+html.rc-frame #header > .container-fluid {
+  display: flex !important;
+  align-items: center;
+  height: 30px;
+  padding: 0 6px 0 10px !important;
+  background: linear-gradient(#fdfdfd, #d9d9d9) !important;
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+}
+/* logo + hamburger + the Charts/Marketplace/Create links: replaced by the banner and #rc-nav */
+html.rc-frame #header .rbx-navbar-header,
+html.rc-frame #header ul.rbx-navbar {
+  display: none !important;
+}
+
+html.rc-frame #header #right-navigation-header {
+  display: flex !important;
+  align-items: center;
+  position: static !important;
+  float: none !important;
+  width: auto !important;
+  height: 30px;
+}
+html.rc-frame #header .navbar-search { display: block !important; }
+html.rc-frame #header .navbar-icon-item { display: block !important; }
+/* mobile-only backdrop, invisible but it still widens the page in small windows */
+html.rc-frame #header .search-overlay { display: none !important; }
+html.rc-frame #header .navbar-search {
+  width: 190px !important;
+  max-width: 190px !important;
+  flex: none !important;
+  padding: 0 !important;
+  margin: 0 8px 0 0 !important;
+}
+html.rc-frame #header #navbar-search-input,
+html.rc-frame #header .navbar-search input {
+  height: 20px !important;
+  min-height: 0 !important;
+  padding: 0 4px !important;
+  border: 1px solid #7f9db9 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  color: #000 !important;
+  font-size: 12px !important;
+}
+html.rc-frame #header .navbar-search .input-group-btn { display: none !important; }
+html.rc-frame #header .rbx-navbar-right {
+  float: none !important;
+  width: auto !important;
+  height: 30px;
+}
+/* logged out it is .rbx-navbar-right-nav, logged in it is .rbx-navbar-icon-group */
+html.rc-frame #header .rbx-navbar-right-nav,
+html.rc-frame #header .rbx-navbar-icon-group {
+  display: flex !important;
+  align-items: center;
+  height: 30px;
+  margin: 0 !important;
+}
+html.rc-frame #header .rbx-navbar-right-nav > li,
+html.rc-frame #header .rbx-navbar-icon-group > li { height: auto !important; }
+html.rc-frame #header .rbx-navbar-right-search { display: none !important; }
+/* the sign already shows ROBUX and the auth tab has the name */
+html.rc-frame #header #navbar-robux,
+html.rc-frame #header .age-bracket-label { display: none !important; }
+html.rc-frame #header .signup-button,
+html.rc-frame #header .rbx-navbar-login {
+  height: 20px !important;
+  min-height: 0 !important;
+  line-height: 16px !important;
+  padding: 1px 8px !important;
+  font-size: 11px !important;
+}
+
+/* ---------- section headers ---------- */
+
+html.rc-on .game-sort-header-container .container-header,
+html.rc-on .games-list-container .container-header,
+html.rc-on .people-list-header,
+html.rc-on #HomeContainer .container-header {
+  display: flex !important;
+  align-items: center;
+  height: auto !important;
+  min-height: var(--rc-head-h) !important;
+  margin: 8px 0 0 !important;
+  padding: 0 16px 0 7px !important;
+  background: var(--rc-head) !important;
+  color: var(--rc-head-ink) !important;
+}
+html.rc-on .game-sort-header-container .container-header h2,
+html.rc-on .games-list-container .container-header h2,
+html.rc-on .people-list-header h2,
+html.rc-on #HomeContainer .container-header h2,
+html.rc-on .game-sort-header-container .container-header h3,
+html.rc-on .games-list-container .container-header h3,
+html.rc-on .people-list-header h2 a,
+html.rc-on #HomeContainer .container-header h2 a,
+html.rc-on .game-sort-header-container .container-header h2 a {
+  margin: 0 !important;
+  color: var(--rc-head-ink) !important;
+  font-size: var(--rc-head-size) !important;
+  font-weight: bold !important;
+  line-height: var(--rc-head-h) !important;
+  text-decoration: none !important;
+}
+html.rc-on .game-sort-header-container .container-header .info-tooltip-container,
+html.rc-on .games-list-container .container-header .info-tooltip-container { filter: invert(1); }
+html.rc-on .game-sort-header-container .container-header .btn-more,
+html.rc-on .games-list-container .container-header .btn-more,
+html.rc-on .people-list-header .btn-more,
+html.rc-on #HomeContainer .container-header .btn-more,
+html.rc-on .container-header .see-all-link-icon {
+  margin-left: auto !important;
+  padding: 0 4px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  background: var(--rc-btn2) !important;
+  border: 0 !important;
+  color: var(--rc-btn2-ink) !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+html.rc-on .container-header .btn-more:hover { text-decoration: underline !important; }
+/* its little arrow sits on top of the "l" once the font changes */
+html.rc-on .container-header .see-all-link-icon::before,
+html.rc-on .container-header .see-all-link-icon::after { display: none !important; }
+
+html.rc-on .home-sort-header-container {
+  display: flex !important;
+  align-items: center;
+  height: var(--rc-head-h) !important;
+  margin: 8px 0 0 !important;
+  padding: 0 16px 0 7px !important;
+  background: var(--rc-head) !important;
+}
+html.rc-on .home-sort-header-container > div,
+html.rc-on .home-sort-header-container > div > * {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+html.rc-on .home-sort-header-container span,
+html.rc-on .home-sort-header-container a {
+  color: var(--rc-head-ink) !important;
+  text-decoration: none !important;
+}
+html.rc-on .home-sort-header-container [class*="textIconRowText"] {
+  font-size: var(--rc-head-size) !important;
+  font-weight: bold !important;
+  line-height: var(--rc-head-h) !important;
+}
+html.rc-on .home-sort-header-container [class*="icon"] { filter: brightness(0) invert(1); }
+
+/* "Home" at the top of /home is a page title, not a section tab */
+html.rc-on #HomeContainer > .section > .container-header {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 0 4px !important;
+  padding: 0 !important;
+  background: none !important;
+}
+html.rc-on #HomeContainer > .section > .container-header h1 {
+  color: #333 !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+html.rc-on .games-list-header h1,
+html.rc-on #content > div > h1,
+html.rc-on .section > h1 {
+  color: #333 !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  letter-spacing: 0 !important;
+}
+
+/* the white boxes */
+html.rc-on .horizontal-scroller.games-list,
+html.rc-on .game-grid,
+html.rc-on .friends-carousel-container,
+html.rc-on .section-content {
+  padding: 5px !important;
+  margin-bottom: 8px !important;
+  background: var(--rc-box) !important;
+  border: var(--rc-box-line) !important;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+/* modern carousel keeps 30px each side for its arrows, which pushes the box off its header tab */
+html.rc-on .horizontal-scroller.games-list { margin: 0 0 8px !important; }
+
+/* ---------- game cards ---------- */
+
+html.rc-on .game-card-container {
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+html.rc-on .thumbnail-2d-container,
+html.rc-on .game-card-thumb,
+html.rc-on .game-card-thumb-container,
+html.rc-on .game-card-thumb img {
+  border-radius: 0 !important;
+}
+html.rc-on .game-card-thumb-container,
+html.rc-on .featured-game-icon-container { border: 1px solid #aaa; }
+
+html.rc-on .game-card-link:hover .game-card-thumb-container,
+html.rc-on .game-card-link:hover .featured-game-icon-container {
+  border-color: #6e99c9 !important;
+  box-shadow: 0 0 0 2px #cfe2f6;
+}
+html.rc-on .game-card-link:hover .game-card-name { text-decoration: underline !important; }
+
+/* friend headshots were square in 2011 */
+html.rc-on .friends-carousel-tile .avatar-card-image,
+html.rc-on .friends-carousel-tile .avatar-card-image img,
+html.rc-on .friends-carousel-tile .avatar-headshot {
+  border-radius: 0 !important;
+}
+html.rc-on .game-card-name,
+html.rc-on .game-name-title {
+  margin-top: 3px !important;
+  color: var(--rc-link) !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  line-height: 14px !important;
+}
+html.rc-on .game-card-info,
+html.rc-on .game-card-info .info-label {
+  color: #666 !important;
+  font-size: 11px !important;
+}
+
+/* ---------- buttons ---------- */
+
+html.rc-on [class*="btn-primary-"],
+html.rc-on [class*="btn-cta-"] {
+  background: var(--rc-btn) !important;
+  border: 1px solid var(--rc-btn-line) !important;
+  border-radius: 3px !important;
+  color: var(--rc-btn-ink) !important;
+  font-weight: bold !important;
+}
+html.rc-2011 [class*="btn-primary-"],
+html.rc-2011 [class*="btn-cta-"] { text-shadow: 0 -1px 0 rgba(0, 0, 0, .3); }
+html.rc-2011 [class*="btn-primary-"]:hover,
+html.rc-2011 [class*="btn-cta-"]:hover { background-position: 0 100% !important; }
+html.rc-2010 [class*="btn-primary-"]:hover,
+html.rc-2010 [class*="btn-cta-"]:hover {
+  background: #6e99c9 !important;
+  border-color: #000 !important;
+  color: #fff !important;
+}
+html.rc-on [class*="btn-growth-"] {
+  background: linear-gradient(#74d14c, #3a9d1c) !important;
+  border: 1px solid #2c7a13 !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+html.rc-on [class*="btn-growth-"]:hover { background: linear-gradient(#86e05c, #43b021) !important; }
+html.rc-on [class*="btn-secondary-"],
+html.rc-on [class*="btn-control-"] {
+  background: var(--rc-btn2) !important;
+  border: 1px solid var(--rc-btn2-line) !important;
+  border-radius: 3px !important;
+  color: var(--rc-btn2-ink) !important;
+}
+html.rc-on [class*="btn-secondary-"]:hover,
+html.rc-on [class*="btn-control-"]:hover {
+  background: #6e99c9 !important;
+  border-color: #000 !important;
+  color: #fff !important;
+}
+
+/* game page: the big green "Play" from 2011 instead of the wide blue bar */
+/* best button ever made. no notes */
+html.rc-frame .btn-common-play-game-lg,
+html.rc-frame #game-details-play-button-container button {
+  width: 212px !important;
+  height: 54px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: url("chrome-extension://__MSG_@@extension_id__/img/btn_play_54h.png") no-repeat 0 0 !important;
+  text-shadow: none;
+}
+html.rc-frame .btn-common-play-game-lg:hover,
+html.rc-frame #game-details-play-button-container button:hover {
+  background-position: 0 -54px !important;
+}
+html.rc-frame .btn-common-play-game-lg > *,
+html.rc-frame #game-details-play-button-container button > * {
+  visibility: hidden;
+}
+
+/* game page: 32px title wraps badly in the narrow right column */
+html.rc-on .game-title-container .game-name {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  line-height: 28px !important;
+}
+html.rc-on .favorite-follow-vote-share .icon-label { font-size: 11px !important; }
+
+html.rc-on .alert-system-feedback .alert:not(.on) { visibility: hidden !important; }
+
+/* ---------- tabs (profile, game page, catalog) ---------- */
+
+html.rc-on .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading,
+html.rc-on .rbx-tab-heading {
+  background: linear-gradient(#fff, #e1e1e1) !important;
+  border: 1px solid #aaa !important;
+  border-radius: 0 !important;
+  color: #333 !important;
+}
+html.rc-on .rbx-tab.active .rbx-tab-heading,
+html.rc-on .rbx-tab-heading.active {
+  background: #6e99c9 !important;
+  border-color: #6e99c9 !important;
+  color: #fff !important;
+}
+html.rc-on .rbx-tab-heading .text-lead { color: inherit !important; }
+
+/* ---------- footer ---------- */
+
+html.rc-frame #footer-container,
+html.rc-frame .container-footer {
+  position: static !important;
+  clear: both;
+  width: 900px !important;
+  max-width: 900px !important;
+  margin: 0 !important;
+  padding: 3em 20px !important;
+  box-sizing: border-box;
+  background: var(--rc-footer) !important;
+  border: 0 !important;
+  color: #aaa !important;
+  text-align: center;
+}
+html.rc-frame #footer-container .footer { max-width: none !important; }
+html.rc-frame #footer-container .text-footer-nav {
+  color: var(--rc-link) !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+}
+html.rc-frame #footer-container .footer-link:first-child .text-footer-nav { font-weight: bold !important; }
+html.rc-frame #footer-container .footer-link + .footer-link::before {
+  content: "|";
+  color: #aaa;
+  margin: 0 6px 0 0;
+}
+html.rc-frame #footer-container .text-footer,
+html.rc-frame #footer-container .footer-note {
+  color: #555 !important;
+  font-size: 10px !important;
+}
+
+/* ---------- the bar eras (2014 / 2016) ---------- */
+/* no wooden banner in these, the site header itself becomes the era bar */
+
+html.rc-bar #rc-top { display: none !important; }
+
+html.rc-bar #header.rbx-header,
+html.rc-bar #header.navbar-fixed-top {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: var(--rc-bar-h) !important;
+  background: var(--rc-bar) !important;
+  border: 0 !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  z-index: 1030 !important;
+}
+html.rc-bar #header > .container-fluid {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  height: var(--rc-bar-h);
+  max-width: 1338px;
+  margin: 0 auto;
+  padding: 0 12px !important;
+  background: none !important;
+  box-shadow: none;
+}
+html.rc-bar #header .rbx-navbar-header { display: block !important; float: none !important; }
+html.rc-bar #header .rbx-nav-collapse,
+html.rc-bar #header #age-badge-container { display: none !important; }
+html.rc-bar #header .navbar-brand {
+  display: flex !important;
+  align-items: center;
+  height: var(--rc-bar-h);
+  padding: 0 !important;
+}
+/* the modern logo svg swapped for the 2014 wordmark, it survived on the cdn */
+/* the site hides one of the two logo elements by width, force ours on */
+html.rc-bar #header .icon-logo {
+  display: block !important;
+  background: url("chrome-extension://__MSG_@@extension_id__/img/logo2014.png") no-repeat left center !important;
+  background-size: contain !important;
+  width: var(--rc-logo-w) !important;
+  height: 26px !important;
+}
+html.rc-bar #header .icon-logo-r { display: none !important; }
+html.rc-bar #header ul.rbx-navbar {
+  display: flex !important;
+  align-items: center;
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html.rc-bar #header ul.rbx-navbar.hidden-xs.hidden-sm { display: flex !important; }
+html.rc-bar #header ul.rbx-navbar.hidden-md { display: none !important; }
+html.rc-bar #header .nav-menu-title,
+html.rc-bar #header .rbx-navbar a {
+  color: var(--rc-bar-ink) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+html.rc-bar #header #right-navigation-header {
+  display: flex !important;
+  align-items: center;
+  position: static !important;
+  float: none !important;
+  width: auto !important;
+  height: var(--rc-bar-h);
+  margin-left: auto;
+}
+html.rc-bar #header .search-overlay { display: none !important; }
+html.rc-bar #header .navbar-search {
+  width: 220px !important;
+  max-width: 220px !important;
+  flex: none !important;
+  margin: 0 8px 0 0 !important;
+  padding: 0 !important;
+}
+html.rc-bar #header #navbar-search-input {
+  height: 28px !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  background: #fff !important;
+  color: #191919 !important;
+}
+html.rc-bar #header .rbx-navbar-right-nav,
+html.rc-bar #header .rbx-navbar-icon-group {
+  display: flex !important;
+  align-items: center;
+  height: var(--rc-bar-h);
+  margin: 0 !important;
+}
+html.rc-bar #header .age-bracket-label { color: var(--rc-bar-ink) !important; }
+html.rc-bar #header .rbx-navbar-right-search { display: none !important; }
+
+/* page sits under the fixed bar */
+html.rc-bar #container-main,
+html.rc-bar .container-main {
+  margin-top: var(--rc-bar-h) !important;
+  background: var(--rc-col) !important;
+}
+html.rc-bar #content.content { background: transparent !important; }
+
+/* 2014 was a 900px white page with no side rail, 2016 was wide and kept the rail */
+html.rc-2014 #wrap,
+html.rc-2014 body { --left-nav-reserved-width: 0px !important; }
+html.rc-2014 #left-navigation-container,
+html.rc-2014 .rbx-left-col { display: none !important; }
+html.rc-2014 #container-main,
+html.rc-2014 .container-main {
+  width: 900px !important;
+  max-width: 900px !important;
+  margin: 50px auto 0 !important;
+  padding: 5px 0 25px !important;
+  box-sizing: border-box;
+  min-height: 550px;
+}
+html.rc-2016 #container-main,
+html.rc-2016 .container-main { max-width: 1338px !important; }
+html.rc-2016 .rbx-left-col { background: #fff !important; box-shadow: 0 0 3px rgba(25, 25, 25, .3); }
+
+/* section headings go back to plain text with a coloured button on the right */
+html.rc-bar .container-header,
+html.rc-bar .home-sort-header-container {
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+}
+html.rc-bar .container-header h2,
+html.rc-bar .container-header h3,
+html.rc-bar .home-sort-header-container [class*="textIconRowText"] {
+  font-weight: 400 !important;
+  letter-spacing: -.5px;
+}
+html.rc-bar .container-header .btn-more,
+html.rc-bar .container-header .see-all-link-icon {
+  padding: 4px 12px !important;
+  border-radius: 3px !important;
+}
+/* cards were flat white with a soft shadow, not bordered boxes */
+html.rc-2016 .horizontal-scroller.games-list,
+html.rc-2016 .game-grid,
+html.rc-2016 .friends-carousel-container,
+html.rc-2016 .section-content {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
+html.rc-bar .game-card-name { font-weight: 400 !important; }
+html.rc-bar .game-card-link:hover .game-card-name { text-decoration: none !important; color: var(--rc-btn2) !important; }
+
+/* the 2011 play sprite belongs to the banner eras, these get a flat era button */
+html.rc-bar .btn-common-play-game-lg,
+html.rc-bar #game-details-play-button-container button {
+  background: var(--rc-btn) !important;
+  border: 0 !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+}
+html.rc-bar #footer-container,
+html.rc-bar .container-footer { background: var(--rc-footer) !important; }
+
+/* ---------- the hover tile ---------- */
+
+html.rc-on .hover-game-tile.focused .game-card-container,
+html.rc-on .hover-game-tile.focused .featured-game-container {
+  background: var(--rc-box) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+}
+html.rc-frame .hover-game-tile.focused .featured-game-container {
+  border: var(--rc-box-line) !important;
+  border-radius: 0 !important;
+}
+
+html.rc-on .hover-game-tile .play-button {
+  background: linear-gradient(#74d14c, #3a9d1c) !important;
+  border: 0 !important;
+}
+html.rc-bar .hover-game-tile .play-button { background: var(--rc-btn) !important; }
+
+/* ---------- 2016 left rail (injected by classic.js) ---------- */
+
+html.rc-rail #left-navigation-container,
+html.rc-rail .left-nav { display: none !important; }
+
+#rc-rail { display: none; }
+html.rc-rail #rc-rail {
+  display: block;
+  position: fixed;
+  top: var(--rc-bar-h);
+  left: 0;
+  bottom: 0;
+  width: 175px;
+  box-sizing: border-box;
+  padding: 6px 0;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(25, 25, 25, .3);
+  overflow-y: auto;
+  z-index: 1001;
+}
+html.rc-rail #rc-rail a {
+  display: block;
+  padding: 9px 14px;
+  color: #191919 !important;
+  font-size: 15px;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+html.rc-rail #rc-rail a:hover { background: #f2f2f2; }
+html.rc-rail #rc-rail a.rc-here { box-shadow: inset 4px 0 0 #00a2ff; font-weight: 600; }
+html.rc-rail #rc-rail hr { margin: 6px 12px; border: 0; border-top: 1px solid #e3e3e3; }
+
+html.rc-rail #container-main,
+html.rc-rail .container-main,
+html.rc-rail #footer-container,
+html.rc-rail .container-footer { margin-left: 175px !important; }
+
+/* ---------- foundation tokens ---------- */
+
+html.rc-on body {
+  --color-surface-0: var(--rc-surface-0) !important;
+  --color-surface-100: var(--rc-surface-100) !important;
+  --color-surface-200: var(--rc-surface-200) !important;
+  --color-surface-300: var(--rc-surface-300) !important;
+  --color-content-emphasis: var(--rc-ink) !important;
+  --color-content-default: var(--rc-ink-2) !important;
+  --color-content-muted: #666 !important;
+  --color-content-link: var(--rc-link) !important;
+  --color-system-emphasis: var(--rc-accent) !important;
+  --color-stroke-default: var(--rc-line) !important;
+  --color-stroke-muted: var(--rc-line) !important;
+  --color-stroke-emphasis: var(--rc-line) !important;
+  --radius-xsmall: var(--rc-radius) !important;
+  --radius-small: var(--rc-radius) !important;
+  --radius-medium: var(--rc-radius) !important;
+  --radius-large: var(--rc-radius) !important;
+}
