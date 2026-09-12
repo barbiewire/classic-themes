@@ -1,4 +1,6 @@
 # Classic ROBLOX
+> These are CUSTOM NOTES I wrote for myself incase I forget something, not too important.
+> README contains the consumer-related stuff, sort of like a thing for stupid people.
 
 Chrome extension that skins roblox.com to look like the late-2011 site.
 
