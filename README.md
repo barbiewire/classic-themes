@@ -12,15 +12,17 @@ irm https://raw.githubusercontent.com/barbiewire/classic-themes/main/install.ps1
 ```
 
 it downloads everything, dumps it in %LOCALAPPDATA%\ClassicThemes, copies that path to your
-clipboard and opens the folder. then just do steps 2 and 3 below and drag the folder in.
+clipboard and opens the folder. then just do steps 2 and 3 below and drag the folder in
 
-run it again whenever = update. hit the reload arrow on the extension after.
+run it whenever there's an update
+THEN press the reload button in your broswer://extensions
 
-dont trust random scripts? good instinct. it's install.ps1 in this repo, go read it first.
+dont wanna trust random scripts?
+i lowk respect that so install.ps1 is on this repo for u to read 👍
 
-there is NO way to skip the developer mode part - chrome and brave both ignore
---load-extension now (tested on chrome 152 and brave 153), and the only true one click
-install is the $5 web store. so.
+there is NO way to skip the developer mode part since chrome and brave both ignore
+--load-extension now (tested on chrome 152 and brave 153) and the only true one click
+install is the $5 web store, so FUCK no
 
 ## OR DO IT MANUALLY:
 
