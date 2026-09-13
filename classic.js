@@ -252,36 +252,40 @@ function reword(scope) {
   if (/Roblox/.test(document.title)) document.title = document.title.replace(/\bRoblox\b/g, 'ROBLOX');
 }
 
-// 8 fake ads an era, 6 leaderboards and 2 skyscrapers. every game in them is invented
-const adcount = { lb: 6, sk: 2 };
-
-function adpick(era, kind, used) {
-  const free = [];
-  for (let i = 1; i <= adcount[kind]; i++) if (!used.has(kind + i)) free.push(i);
-  const pool = free.length ? free : [1];
-  const n = pool[Math.floor(Math.random() * pool.length)];
-  used.add(kind + n);
-  return chrome.runtime.getURL(`img/ads/${era}-${kind}-${n}.png`);
-}
-
-function adbox(era, kind, used) {
-  const img = el('img', {
-    src: adpick(era, kind, used),
-    alt: 'Advertisement',
-    width: kind === 'lb' ? 728 : 160,
-    height: kind === 'lb' ? 90 : 600,
-  });
-  const box = el('div', { class: 'rc-ad rc-ad-' + kind, title: 'fake ad. click it for a different one' }, [
-    el('span', { class: 'rc-adlabel', text: 'Advertisement' }),
-    img,
-  ]);
-  // a real one took you to the game, this one just deals you another
-  box.addEventListener('click', () => { img.src = adpick(era, kind, new Set()); });
-  return box;
-}
+// checked the 2011 captures: the home page ran a 728x90 up top and a 300x250 below it,
+// slots Roblox_Home_Only_Top_728x90 and Roblox_Home_Only_Medium_Rectangle_300x250. no towers
+const adcount = {
+  '2010': { lb: 6, mr: 3 },
+  '2011': { lb: 6, mr: 3 },
+  '2014': { lb: 8 },
+  '2016': { lb: 8 },
+};
+const adsize = { lb: [728, 90], mr: [300, 250] };
 
 function era() {
   return Object.keys(skins).find(k => root.classList.contains('rc-' + k)) || '2011';
+}
+
+function adpick(e, kind, used) {
+  const free = [];
+  for (let i = 1; i <= adcount[e][kind]; i++) if (!used.has(kind + i)) free.push(i);
+  const pool = free.length ? free : [1];
+  const n = pool[Math.floor(Math.random() * pool.length)];
+  used.add(kind + n);
+  return chrome.runtime.getURL(`img/ads/${e}-${kind}-${n}.png`);
+}
+
+function adbox(e, kind, used) {
+  const [w, h] = adsize[kind];
+  const img = el('img', { src: adpick(e, kind, used), alt: 'Advertisement', width: w, height: h });
+  // the old pages had a [ report ] link under the slot instead of a label, so keep that
+  const tag = root.classList.contains('rc-frame')
+    ? el('a', { class: 'rc-adlabel rc-adreport', title: 'click to report an offensive ad', text: '[ report ]' })
+    : el('span', { class: 'rc-adlabel', text: 'Advertisement' });
+  const box = el('div', { class: 'rc-ad rc-ad-' + kind, title: 'fake ad. click it for a different one' }, [img, tag]);
+  // a real one took you to the game, this one just deals you another
+  box.addEventListener('click', () => { img.src = adpick(e, kind, new Set()); });
+  return box;
 }
 
 function ads() {
@@ -301,22 +305,12 @@ function ads() {
     top.parentNode.insertBefore(b, top);
   }
 
+  // 2008-2012 got the rectangle down the page, 2014 on kept a second leaderboard
   const foot = document.getElementById('footer-container');
   if (foot && !document.getElementById('rc-ad-bot')) {
-    const b = adbox(e, 'lb', used);
+    const b = adbox(e, adcount[e].mr ? 'mr' : 'lb', used);
     b.id = 'rc-ad-bot';
     foot.parentNode.insertBefore(b, foot);
-  }
-
-  // 2016 already has a rail down the left, it doesnt need a tower on the right too
-  const wantside = !root.classList.contains('rc-rail');
-  const side = document.getElementById('rc-ad-side');
-  if (wantside && !side) {
-    const b = adbox(e, 'sk', used);
-    b.id = 'rc-ad-side';
-    main.appendChild(b);
-  } else if (!wantside && side) {
-    side.remove();
   }
 }
 

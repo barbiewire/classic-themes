@@ -1044,6 +1044,7 @@ html.rc-ads .rc-ad img {
 }
 html.rc-ads .rc-adlabel {
   display: block;
+  margin-top: 2px;
   color: #999 !important;
   font-size: 9px !important;
   line-height: 12px;
@@ -1052,17 +1053,17 @@ html.rc-ads .rc-adlabel {
   text-align: left;
 }
 
-/* the tower hangs off the right of the page column, absolute so it scrolls along */
-html.rc-ads .rc-ad-sk {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 160px;
-  margin: 0 0 0 14px;
+/* the 300x250 sat in the page, not off to the side */
+html.rc-ads .rc-ad-mr { width: 300px; }
+
+html.rc-ads .rc-adreport {
+  color: #666 !important;
+  font-size: 10px !important;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
 }
-/* nowhere to put it on a small window, and it would drag a sideways scrollbar in */
-@media (max-width: 1259px) {
-  html.rc-ads .rc-ad-sk { display: none !important; }
-}
+html.rc-2010 .rc-adreport, html.rc-2011 .rc-adreport { text-align: right; }
+
 html.rc-frame #rc-ad-top { margin-top: 4px; }
 html.rc-2016 #rc-ad-bot { margin-bottom: 24px; }
