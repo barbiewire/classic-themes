@@ -252,39 +252,55 @@ function reword(scope) {
   if (/Roblox/.test(document.title)) document.title = document.title.replace(/\bRoblox\b/g, 'ROBLOX');
 }
 
-// checked the 2011 captures: the home page ran a 728x90 up top and a 300x250 below it,
-// slots Roblox_Home_Only_Top_728x90 and Roblox_Home_Only_Medium_Rectangle_300x250. no towers
-const adcount = {
-  '2010': { lb: 6, mr: 3 },
-  '2011': { lb: 6, mr: 3 },
-  '2014': { lb: 8 },
-  '2016': { lb: 8 },
+// real user made ads out of archive.org/details/RobloxAdverts. theyre somebody elses work
+// so nothing is copied into the extension, bg.js pulls each one when its actually shown
+const adlist = {
+  lb: [
+    '96d3adb5225200ee2c9e22c13b1633c7.jpg', 'adevent.jpg', 'adlaz.png',
+    'robloxad2.png', 'become-a-chicken-obby-ad2.png',
+  ],
+  sk: [
+    'Ad3.jpg', 'AdBall.jpg', 'Adjimmy.jpg', 'adfid.jpg', 'adstone.PNG', 'adtix.png',
+    'adturtles.jpg', 'adwater.jpg', 'become-a-chicken-ad.png', 'robloxad.jpg',
+    'robloxad2.jpg', 'robloxad3.jpg', 'robloxrubbues.jpg',
+    'best_roblox_ads_i_found_by_codycoimc102-db062cq.jpg',
+  ],
+  box: ['adcereal.jpg', 'adfat.png', 'admeme.png'],
 };
-const adsize = { lb: [728, 90], mr: [300, 250] };
 
 function era() {
   return Object.keys(skins).find(k => root.classList.contains('rc-' + k)) || '2011';
 }
 
-function adpick(e, kind, used) {
-  const free = [];
-  for (let i = 1; i <= adcount[e][kind]; i++) if (!used.has(kind + i)) free.push(i);
-  const pool = free.length ? free : [1];
+function adpick(kind, used) {
+  const all = adlist[kind];
+  const free = all.filter(n => !used.has(n));
+  const pool = free.length ? free : all;
   const n = pool[Math.floor(Math.random() * pool.length)];
-  used.add(kind + n);
-  return chrome.runtime.getURL(`img/ads/${e}-${kind}-${n}.png`);
+  used.add(n);
+  return n;
 }
 
-function adbox(e, kind, used) {
-  const [w, h] = adsize[kind];
-  const img = el('img', { src: adpick(e, kind, used), alt: 'Advertisement', width: w, height: h });
-  // the old pages had a [ report ] link under the slot instead of a label, so keep that
+function paint(img, name) {
+  chrome.runtime.sendMessage({ ad: name }).then(url => {
+    if (url) img.src = url;
+    else img.closest('.rc-ad')?.remove();   // archive.org didnt answer, no ad then
+  }).catch(() => {});
+}
+
+function adbox(kind, used) {
+  const name = adpick(kind, used);
+  const img = el('img', { alt: 'Advertisement' });
   const tag = root.classList.contains('rc-frame')
     ? el('a', { class: 'rc-adlabel rc-adreport', title: 'click to report an offensive ad', text: '[ report ]' })
     : el('span', { class: 'rc-adlabel', text: 'Advertisement' });
-  const box = el('div', { class: 'rc-ad rc-ad-' + kind, title: 'fake ad. click it for a different one' }, [img, tag]);
-  // a real one took you to the game, this one just deals you another
-  box.addEventListener('click', () => { img.src = adpick(e, kind, new Set()); });
+  const box = el('div', {
+    class: 'rc-ad rc-ad-' + kind,
+    title: name + ' - archive.org/details/RobloxAdverts',
+  }, [img, tag]);
+  // the real ones linked to a game, these just deal you the next one out of the pile
+  box.addEventListener('click', () => paint(img, adpick(kind, new Set())));
+  paint(img, name);
   return box;
 }
 
@@ -295,22 +311,32 @@ function ads() {
   }
   const main = document.getElementById('container-main');
   if (!main) return;
-  const e = era();
   const used = new Set();
 
   const top = document.getElementById('content') || main.firstElementChild;
   if (top && !document.getElementById('rc-ad-top')) {
-    const b = adbox(e, 'lb', used);
+    const b = adbox('lb', used);
     b.id = 'rc-ad-top';
     top.parentNode.insertBefore(b, top);
   }
 
-  // 2008-2012 got the rectangle down the page, 2014 on kept a second leaderboard
+  // 2008-2012 ran a box down the page, 2014 on kept a second leaderboard
   const foot = document.getElementById('footer-container');
   if (foot && !document.getElementById('rc-ad-bot')) {
-    const b = adbox(e, adcount[e].mr ? 'mr' : 'lb', used);
+    const b = adbox(root.classList.contains('rc-frame') ? 'box' : 'lb', used);
     b.id = 'rc-ad-bot';
     foot.parentNode.insertBefore(b, foot);
+  }
+
+  // most of the surviving ads are 160x600, so the tower is back. 2016 has the rail instead
+  const wantside = !root.classList.contains('rc-rail');
+  const side = document.getElementById('rc-ad-side');
+  if (wantside && !side) {
+    const b = adbox('sk', used);
+    b.id = 'rc-ad-side';
+    main.appendChild(b);
+  } else if (!wantside && side) {
+    side.remove();
   }
 }
 

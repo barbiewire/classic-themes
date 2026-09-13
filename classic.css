@@ -1027,11 +1027,12 @@ html.rc-on body {
   --radius-large: var(--rc-radius) !important;
 }
 
-/* ---------- fake ads (opt in from the popup) ---------- */
-/* roblox ran a 728x90 over the page and a 160x600 beside it, so thats where these go */
+/* ---------- old ads (opt in from the popup) ---------- */
+/* real user made ones off archive.org, so their own size is the right size */
 
 html.rc-ads .rc-ad {
-  width: 728px;
+  width: -moz-fit-content;
+  width: fit-content;
   max-width: 100%;
   margin: 12px auto 16px;
   cursor: pointer;
@@ -1052,18 +1053,28 @@ html.rc-ads .rc-adlabel {
   text-transform: uppercase;
   text-align: left;
 }
-
-/* the 300x250 sat in the page, not off to the side */
-html.rc-ads .rc-ad-mr { width: 300px; }
-
 html.rc-ads .rc-adreport {
   color: #666 !important;
   font-size: 10px !important;
   text-transform: none;
   letter-spacing: 0;
+  text-align: right;
   cursor: pointer;
 }
-html.rc-2010 .rc-adreport, html.rc-2011 .rc-adreport { text-align: right; }
 
+/* 160x600 hangs off the right of the page column and scrolls with it */
+html.rc-ads .rc-ad-sk {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  /* hanging off the edge leaves no room to shrink into, so state the width outright */
+  width: max-content;
+  margin: 0 0 0 14px;
+}
+html.rc-ads .rc-ad-sk img { max-width: none; }
+/* no room for it on a small window and it would drag in a sideways scrollbar */
+@media (max-width: 1259px) {
+  html.rc-ads .rc-ad-sk { display: none !important; }
+}
 html.rc-frame #rc-ad-top { margin-top: 4px; }
 html.rc-2016 #rc-ad-bot { margin-bottom: 24px; }

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Classic ROBLOX",
-  "version": "1.5.1",
-  "description": "Old roblox.com skins - pick 2008-2010, 2011-2012, 2014 or 2015-2016. Optional fake era ads.",
+  "version": "1.6.0",
+  "description": "Old roblox.com skins - pick 2008-2010, 2011-2012, 2014 or 2015-2016. Optional archived user ads.",
   "icons": {
     "16": "img/icon16.png",
     "32": "img/icon32.png",
@@ -35,8 +35,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "img/*",
-        "img/ads/*"
+        "img/*"
       ],
       "matches": [
         "https://www.roblox.com/*",
@@ -44,5 +43,12 @@
         "https://web.roblox.com/*"
       ]
     }
+  ],
+  "background": {
+    "service_worker": "bg.js"
+  },
+  "host_permissions": [
+    "https://archive.org/*",
+    "https://*.archive.org/*"
   ]
 }

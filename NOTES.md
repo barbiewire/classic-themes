@@ -66,3 +66,16 @@ those into one 33px row made them overlap.
 
 Roblox changes its markup often. Most selectors target the older `rbx-*` class names, which have stuck
 around for years, but if something breaks after a site update it's probably a renamed class in `classic.css`.
+
+## ads
+
+the OLD ADS toggle shows real user made adverts from
+https://archive.org/details/RobloxAdverts (uploaded by plescatoma, 2019)
+
+none of them are stored in this repo. bg.js fetches one from archive.org the first time
+it gets shown and caches it in chrome.storage.local, because roblox csp is
+img-src self data: *.rbxcdn.com so an archive.org url in an <img> gets blocked outright
+
+the ads belong to whoever drew them, this only displays them
+
+(the 34 hand drawn placeholder ads that used to live in img/ads are in git history at 01e6f64)
