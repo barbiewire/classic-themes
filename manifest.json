@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Classic ROBLOX",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Old roblox.com skins - pick 2008-2010, 2011-2012, 2014 or 2015-2016. Optional archived user ads.",
   "icons": {
     "16": "img/icon16.png",
@@ -49,6 +49,15 @@
   },
   "host_permissions": [
     "https://archive.org/*",
-    "https://*.archive.org/*"
-  ]
+    "https://*.archive.org/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "commands": {
+    "toggle": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "Turn the skin on or off"
+    }
+  }
 }

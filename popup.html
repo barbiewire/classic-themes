@@ -48,6 +48,43 @@
   b { font-weight: bold; }
   .sub { color: #666; font-size: 11px; }
   p { margin: 6px 2px 2px; color: #666; font-size: 11px; }
+  /* update nag. hidden until github says theres a newer one */
+  #upd {
+    display: none;
+    margin: 6px;
+    padding: 6px 8px;
+    background: #fffbe6;
+    border: 1px solid #e0c86a;
+  }
+  #upd.on { display: block; }
+  #upd b { color: #7a5c00; }
+  #cmd {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 4px;
+    background: #eee;
+    border: 1px solid #aaa;
+    font: 11px Consolas, monospace;
+    text-align: left;
+    cursor: pointer;
+  }
+  #cmd:hover { background: #e5f1fd; }
+  .ft {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px 8px;
+    color: #888;
+    font-size: 10px;
+  }
+  .ft a { color: #06c; }
+  kbd {
+    padding: 0 3px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    font: 10px Arial, sans-serif;
+  }
 </style>
 </head>
 <body>
@@ -62,6 +99,16 @@
   </div>
   <div class="bx">
     <label><input type="checkbox" id="ads"><span><b>OLD ADS</b> <span class="sub">real ones, pulled from archive.org</span></span></label>
+    <p>Hotkey <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> turns the skin off and back on.</p>
+  </div>
+  <div id="upd">
+    <b>Update available</b> <span id="vnew"></span><br>
+    <span class="sub">paste this in powershell, then hit reload on the extensions page</span>
+    <button id="cmd">click to copy the install command</button>
+  </div>
+  <div class="ft">
+    <span id="ver"></span>
+    <a href="https://discord.gg/NZqu5zXkub" target="_blank">bugs &rarr; discord</a>
   </div>
   <script src="popup.js"></script>
 </body>
