@@ -1026,3 +1026,43 @@ html.rc-on body {
   --radius-medium: var(--rc-radius) !important;
   --radius-large: var(--rc-radius) !important;
 }
+
+/* ---------- fake ads (opt in from the popup) ---------- */
+/* roblox ran a 728x90 over the page and a 160x600 beside it, so thats where these go */
+
+html.rc-ads .rc-ad {
+  width: 728px;
+  max-width: 100%;
+  margin: 12px auto 16px;
+  cursor: pointer;
+}
+html.rc-ads .rc-ad img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+html.rc-ads .rc-adlabel {
+  display: block;
+  color: #999 !important;
+  font-size: 9px !important;
+  line-height: 12px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* the tower hangs off the right of the page column, absolute so it scrolls along */
+html.rc-ads .rc-ad-sk {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 160px;
+  margin: 0 0 0 14px;
+}
+/* nowhere to put it on a small window, and it would drag a sideways scrollbar in */
+@media (max-width: 1259px) {
+  html.rc-ads .rc-ad-sk { display: none !important; }
+}
+html.rc-frame #rc-ad-top { margin-top: 4px; }
+html.rc-2016 #rc-ad-bot { margin-bottom: 24px; }

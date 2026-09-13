@@ -6,6 +6,7 @@ root.classList.add('rc-on', 'rc-2011', 'rc-frame');   // guess now, storage fixe
 
 // only one era class at a time or the knobs fight each other
 function wear(pick) {
+  document.querySelectorAll('.rc-ad').forEach(n => n.remove());
   root.classList.remove('rc-frame', 'rc-bar', 'rc-rail', ...Object.keys(skins).map(s => 'rc-' + s));
   if (pick === 'off') { root.classList.remove('rc-on'); return; }
   const era = skins[pick] ? pick : '2011';
@@ -251,6 +252,74 @@ function reword(scope) {
   if (/Roblox/.test(document.title)) document.title = document.title.replace(/\bRoblox\b/g, 'ROBLOX');
 }
 
+// 8 fake ads an era, 6 leaderboards and 2 skyscrapers. every game in them is invented
+const adcount = { lb: 6, sk: 2 };
+
+function adpick(era, kind, used) {
+  const free = [];
+  for (let i = 1; i <= adcount[kind]; i++) if (!used.has(kind + i)) free.push(i);
+  const pool = free.length ? free : [1];
+  const n = pool[Math.floor(Math.random() * pool.length)];
+  used.add(kind + n);
+  return chrome.runtime.getURL(`img/ads/${era}-${kind}-${n}.png`);
+}
+
+function adbox(era, kind, used) {
+  const img = el('img', {
+    src: adpick(era, kind, used),
+    alt: 'Advertisement',
+    width: kind === 'lb' ? 728 : 160,
+    height: kind === 'lb' ? 90 : 600,
+  });
+  const box = el('div', { class: 'rc-ad rc-ad-' + kind, title: 'fake ad. click it for a different one' }, [
+    el('span', { class: 'rc-adlabel', text: 'Advertisement' }),
+    img,
+  ]);
+  // a real one took you to the game, this one just deals you another
+  box.addEventListener('click', () => { img.src = adpick(era, kind, new Set()); });
+  return box;
+}
+
+function era() {
+  return Object.keys(skins).find(k => root.classList.contains('rc-' + k)) || '2011';
+}
+
+function ads() {
+  if (!root.classList.contains('rc-ads') || !root.classList.contains('rc-on')) {
+    document.querySelectorAll('.rc-ad').forEach(n => n.remove());
+    return;
+  }
+  const main = document.getElementById('container-main');
+  if (!main) return;
+  const e = era();
+  const used = new Set();
+
+  const top = document.getElementById('content') || main.firstElementChild;
+  if (top && !document.getElementById('rc-ad-top')) {
+    const b = adbox(e, 'lb', used);
+    b.id = 'rc-ad-top';
+    top.parentNode.insertBefore(b, top);
+  }
+
+  const foot = document.getElementById('footer-container');
+  if (foot && !document.getElementById('rc-ad-bot')) {
+    const b = adbox(e, 'lb', used);
+    b.id = 'rc-ad-bot';
+    foot.parentNode.insertBefore(b, foot);
+  }
+
+  // 2016 already has a rail down the left, it doesnt need a tower on the right too
+  const wantside = !root.classList.contains('rc-rail');
+  const side = document.getElementById('rc-ad-side');
+  if (wantside && !side) {
+    const b = adbox(e, 'sk', used);
+    b.id = 'rc-ad-side';
+    main.appendChild(b);
+  } else if (!wantside && side) {
+    side.remove();
+  }
+}
+
 // the grids work out their columns from --home-feed-width, and roblox fills that in off the
 // whole window like our rail isnt even there. so measure the real column and tell it the truth
 function fit() {
@@ -289,6 +358,7 @@ function mount() {
     theme();
     reword();
     fit();
+    ads();
     return true;
   }
 
@@ -305,6 +375,7 @@ function mount() {
   theme();
   reword();
   fit();
+  ads();
   return true;
 }
 
@@ -333,15 +404,18 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) poll
 addEventListener('resize', () => { if (root.classList.contains('rc-on')) fit(); });
 
 // `on` is the v1.0 setting, kept so nobody gets the skin flipped on after updating
-chrome.storage.sync.get({ skin: null, on: true }, s => {
+chrome.storage.sync.get({ skin: null, on: true, ads: false }, s => {
   const pick = s.skin || (s.on ? '2011' : 'off');
+  root.classList.toggle('rc-ads', !!s.ads);
   wear(pick);
   if (pick !== 'off') start();
 });
 
 // popup picker, no reload needed
 chrome.storage.onChanged.addListener((ch, area) => {
-  if (area !== 'sync' || !ch.skin) return;
+  if (area !== 'sync') return;
+  if (ch.ads) { root.classList.toggle('rc-ads', !!ch.ads.newValue); ads(); }
+  if (!ch.skin) return;
   wear(ch.skin.newValue);
   if (ch.skin.newValue !== 'off') start();
   else { obs.disconnect(); tobs.disconnect(); unfit(); theme(); } // back to 2026. gross
