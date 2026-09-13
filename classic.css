@@ -771,6 +771,14 @@ html.rc-frame #footer-container .footer-note {
 /* no wooden banner in these, the site header itself becomes the era bar */
 
 html.rc-bar #rc-top { display: none !important; }
+html.rc-bar { --rc-bar-w: 1338px; }
+
+/* every nav dropdown is position:fixed right:12px, ie glued to the window edge. fine for
+   roblox because their icons live there, not fine for us since the bar is centred */
+html.rc-bar #header .rbx-navbar-right .popover-content,
+html.rc-bar #header .popover-content {
+  right: calc(12px + max(0px, (100% - var(--rc-bar-w)) / 2)) !important;
+}
 
 html.rc-bar #header.rbx-header,
 html.rc-bar #header.navbar-fixed-top {
@@ -889,9 +897,8 @@ html.rc-2014 .container-main {
   min-height: 550px;
 }
 html.rc-2016 #container-main,
-html.rc-2016 .container-main { max-width: 1338px !important; }
-/* the grids size their columns off this, and the site sets it inline from the full window,
-   so with our narrower rail the rows stopped short and left a gap down the right */
+html.rc-2016 .container-main { max-width: var(--rc-bar-w) !important; }
+/* rough guesses, classic.js measures the real column and overwrites these on #container-main */
 html.rc-2016 { --home-feed-width: min(1290px, calc(100vw - 235px)) !important; }
 html.rc-2014 { --home-feed-width: 880px !important; }
 html.rc-2016 .rbx-left-col { background: #fff !important; box-shadow: 0 0 3px rgba(25, 25, 25, .3); }

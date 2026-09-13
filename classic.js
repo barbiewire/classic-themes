@@ -251,6 +251,23 @@ function reword(scope) {
   if (/Roblox/.test(document.title)) document.title = document.title.replace(/\bRoblox\b/g, 'ROBLOX');
 }
 
+// the grids work out their columns from --home-feed-width, and roblox fills that in off the
+// whole window like our rail isnt even there. so measure the real column and tell it the truth
+function fit() {
+  const box = document.getElementById('container-main');
+  const g = document.querySelector('.game-grid, .game-carousel');
+  if (!box || !g) return;
+  const cs = getComputedStyle(g);
+  // clientWidth already drops the border and any scrollbar, the -1 is for its rounding
+  const w = g.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 1;
+  if (w > 200) box.style.setProperty('--home-feed-width', Math.floor(w) + 'px');
+}
+
+function unfit() {
+  const box = document.getElementById('container-main');
+  if (box) box.style.removeProperty('--home-feed-width');
+}
+
 // ---- boot ----
 
 function mount() {
@@ -271,6 +288,7 @@ function mount() {
     }
     theme();
     reword();
+    fit();
     return true;
   }
 
@@ -286,6 +304,7 @@ function mount() {
   }
   theme();
   reword();
+  fit();
   return true;
 }
 
@@ -311,6 +330,7 @@ function start() {
 }
 
 document.addEventListener('visibilitychange', () => { if (!document.hidden) poll(); });
+addEventListener('resize', () => { if (root.classList.contains('rc-on')) fit(); });
 
 // `on` is the v1.0 setting, kept so nobody gets the skin flipped on after updating
 chrome.storage.sync.get({ skin: null, on: true }, s => {
@@ -324,5 +344,5 @@ chrome.storage.onChanged.addListener((ch, area) => {
   if (area !== 'sync' || !ch.skin) return;
   wear(ch.skin.newValue);
   if (ch.skin.newValue !== 'off') start();
-  else { obs.disconnect(); tobs.disconnect(); theme(); } // back to 2026. gross
+  else { obs.disconnect(); tobs.disconnect(); unfit(); theme(); } // back to 2026. gross
 });
