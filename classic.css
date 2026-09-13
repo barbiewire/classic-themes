@@ -798,7 +798,7 @@ html.rc-bar #header > .container-fluid {
   align-items: center;
   gap: 10px;
   height: var(--rc-bar-h);
-  max-width: 1338px;
+  max-width: var(--rc-bar-w);
   margin: 0 auto;
   padding: 0 12px !important;
   background: none !important;
@@ -896,8 +896,11 @@ html.rc-2014 .container-main {
   box-sizing: border-box;
   min-height: 550px;
 }
+/* capping this at a fixed width left a dead strip down the right on anything wider,
+   so 2016 just fills whatever is left over next to the rail */
+html.rc-2016 { --rc-bar-w: 100%; }
 html.rc-2016 #container-main,
-html.rc-2016 .container-main { max-width: var(--rc-bar-w) !important; }
+html.rc-2016 .container-main { max-width: none !important; }
 /* rough guesses, classic.js measures the real column and overwrites these on #container-main */
 html.rc-2016 { --home-feed-width: min(1290px, calc(100vw - 235px)) !important; }
 html.rc-2014 { --home-feed-width: 880px !important; }
@@ -940,7 +943,13 @@ html.rc-bar #game-details-play-button-container button {
   color: #fff !important;
 }
 html.rc-bar #footer-container,
-html.rc-bar .container-footer { background: var(--rc-footer) !important; }
+html.rc-bar .container-footer {
+  position: static !important;
+  clear: both;
+  left: auto !important;
+  width: auto !important;
+  background: var(--rc-footer) !important;
+}
 
 /* ---------- the hover tile ---------- */
 
